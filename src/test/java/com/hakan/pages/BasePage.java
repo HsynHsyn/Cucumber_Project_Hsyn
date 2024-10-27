@@ -1,10 +1,10 @@
-package com.project_name.pages;
+package com.hakan.pages;
 
 
 
 
-import com.project_name.utilities.BrowserUtils;
-import com.project_name.utilities.Driver;
+import com.hakan.utilities.BrowserUtils;
+import com.hakan.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
