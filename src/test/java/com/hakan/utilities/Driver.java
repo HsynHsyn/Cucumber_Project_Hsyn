@@ -1,4 +1,4 @@
-package com.project_name.utilities;
+package com.hakan.utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

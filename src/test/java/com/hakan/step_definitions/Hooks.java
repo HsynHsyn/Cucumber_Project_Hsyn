@@ -1,11 +1,11 @@
-package com.project_name.step_definitions;
+package com.hakan.step_definitions;
 
 
 
 
-import com.project_name.utilities.BrowserUtils;
-import com.project_name.utilities.ConfigurationReader;
-import com.project_name.utilities.Driver;
+import com.hakan.utilities.BrowserUtils;
+import com.hakan.utilities.ConfigurationReader;
+import com.hakan.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
