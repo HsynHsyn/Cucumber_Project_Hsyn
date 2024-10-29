@@ -10,6 +10,9 @@ public class TaskPage extends BasePage {
     @FindBy(xpath = "//span[@class ='logo-color']")
     public WebElement logo24;
 
+    @FindBy (xpath = "//span[text() ='Task']")
+    public WebElement taskButton;
+
     @FindBy(css = "input[data-bx-id='task-edit-title']")
     public WebElement thingToDoArea;
 

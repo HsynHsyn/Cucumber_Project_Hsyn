@@ -5,6 +5,7 @@ import com.hakan.pages.LoginPage;
 import com.hakan.pages.TaskPage;
 import com.hakan.utilities.BrowserUtils;
 import com.hakan.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -83,6 +84,7 @@ public class Task_StepDefs {
     public void users_should_see_the_task_message_area_has_collapsed() {
         taskPage.taskMessageAreaCollapsed.isDisplayed();
     }
+
 
 
 }

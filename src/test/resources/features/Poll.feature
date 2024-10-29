@@ -1,3 +1,4 @@
+
 Feature: CRM Poll feature
   User Story: As a user, I should be able to create and cancel a poll.
     AC-1 : User should be able to create the Poll
@@ -5,9 +6,6 @@ Feature: CRM Poll feature
 
   Background: For all scenarios user is on CRM24 page of the CRM24 application
     Given the user is on the CRM24 page.
-
-
-
 
   Scenario Outline : User should be able to create the Poll
     When users log in with valid "<account>" credentials.
@@ -19,11 +17,12 @@ Feature: CRM Poll feature
     And user enters Answer-1 and  Answer-2 with clicking Allow multiple choice button
     Then user clicks on Send button
 
+    Examples:
       | account   |
       | helpdesk  |
       | hr        |
       | marketing |
-
+  @Poll
   Scenario Outline:
     Examples: User should be able to cancel the Poll
     When users log in with valid "<account>" credentials.
