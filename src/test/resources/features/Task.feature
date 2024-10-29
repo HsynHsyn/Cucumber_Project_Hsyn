@@ -4,6 +4,8 @@ Feature: CRM Tasks feature
   User Story:
   As a user, I should be able to create a task with the task title and task body and cancel a task.
   Accounts are: helpdesk, HR, marketing
+  AC-1:  Verify that user can create a simple task with the task title and task body.
+  AC-2:  Verify that user can cancel a task.
 
   Background: For all scenarios user is on CRM24 page of the CRM24 application
     Given the user is on the CRM24 page.
