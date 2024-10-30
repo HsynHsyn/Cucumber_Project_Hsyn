@@ -5,10 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class PollPage {
 
     @FindBy(xpath = "//span[text() ='Poll']")
-    public WebElement taskButton;
+    public WebElement pollButton;
 
     @FindBy(css = "span[title = 'Topic']")
     public WebElement bottomTopicButton;
@@ -16,23 +18,40 @@ public class PollPage {
     @FindBy(id = "POST_TITLE")
     public WebElement aboveTopicButton;
 
-    @FindBy(css = "iframe.bx-editor-iframe")
+//    @FindBy(css = "iframe.bx-editor-iframe")
+//    public WebElement iframe;
+
+    @FindBy(xpath ="(//iframe[@class = 'bx-editor-iframe'])")
     public WebElement iframe;
 
     @FindBy(css = "body[contenteditable ='true'] ")
     public WebElement iframeMessageBody;
 
-    @FindBy(css = "span[title~='Quote']") // ~ mean is to consist part of the text inside the value
-    public WebElement quoteText;
+    @FindBy(xpath = "(//span[@data-bx-action='quote'])[1]") // ~ mean is to consist part of the text inside the value
+    public WebElement quoteButton;
+
+    @FindBy(xpath = "(//span[@title='Upload files'])[1]") // ~ mean is to consist part of the text inside the value
+    public WebElement uploadFilesButton;
+
+//    @FindBy(xpath = "//span[text()='Drag files here to upload']") // ~ mean is to consist part of the text inside the value
+//    public WebElement uploadFilesButton;
+
+    @FindBy(name = "bxu_files[]")
+    public WebElement pickFile;
 
     @FindBy(css = "blockquote.bxhtmled-quote")
     public WebElement addQuote;
 
-    @FindBy(id = "input[id ='question_0']")
+    @FindBy(id = "question_0")
     public WebElement question0;
 
-    @FindBy(css = "ol.vote-answers")
-    public WebElement allAnswers;
+//    @FindBy(css = "ol.vote-answers")
+//    public WebElement allAnswers;
+
+    @FindBy(css = "[class = 'vote-block-inp adda']")
+    public List<WebElement> allAnswers;
+
+
 
     // arraylist can be created in there
 
@@ -47,6 +66,9 @@ public class PollPage {
 
     @FindBy(css= "button#blog-submit-button-cancel" )
     public WebElement cancelButtonPoll;
+
+    @FindBy(css = "span.feed-add-post-micro-title" )
+    public WebElement pollMessageAreaCollapsed;
 
 
 

@@ -41,9 +41,9 @@ public class LoginPage extends BasePage{
     Map<String, String[]> users = new HashMap<>();
 
     private void setupUsers(){
-        users.put("helpdesk", new String[]{"helpdesk1@cydeo.com", "UserUser"});
-        users.put("hr", new String[]{"hr1@cydeo.com", "UserUser"});
-        users.put("marketing", new String[]{"marketing1@cydeo.com", "UserUser"});
+        users.put("helpdesk", new String[]{"helpdesk5@cydeo.com", "UserUser"});
+        users.put("hr", new String[]{"hr4@cydeo.com", "UserUser"});
+        users.put("marketing", new String[]{"marketing15@cydeo.com", "UserUser"});
 
     }
 
