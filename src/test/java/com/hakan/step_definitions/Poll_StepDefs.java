@@ -67,8 +67,6 @@ public class Poll_StepDefs {
             }
         }
 
-
-
     }
 
     @Then("user clicks on Send button")
@@ -82,7 +80,6 @@ public class Poll_StepDefs {
         BrowserUtils.verifyElementDisplayed(pollPage.pollMessageAreaCollapsed);
 
     }
-
 
 
 }

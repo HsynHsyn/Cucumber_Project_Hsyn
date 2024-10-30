@@ -1,7 +1,6 @@
 package com.hakan.pages;
 
-
-
+import com.hakan.utilities.ConfigurationReader;
 import com.hakan.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,6 +26,9 @@ public class LoginPage extends BasePage{
     public WebElement loginButton;
 
 
+    @FindBy(css = "input.login-btn")
+    public WebElement bulletPoint;
+
 
 
     public void login(String userNameStr, String passwordStr) {
@@ -41,9 +43,15 @@ public class LoginPage extends BasePage{
     Map<String, String[]> users = new HashMap<>();
 
     private void setupUsers(){
-        users.put("helpdesk", new String[]{"helpdesk5@cydeo.com", "UserUser"});
-        users.put("hr", new String[]{"hr4@cydeo.com", "UserUser"});
-        users.put("marketing", new String[]{"marketing15@cydeo.com", "UserUser"});
+        users.put("helpdesk", new String[]{ConfigurationReader.getProperty("helpdesk_username"),
+                                           ConfigurationReader.getProperty("helpdesk_password")});
+
+
+        users.put("hr", new String[]{ConfigurationReader.getProperty("hr_username"),
+                                     ConfigurationReader.getProperty("hr_password")});
+
+        users.put("marketing", new String[]{ConfigurationReader.getProperty("marketing_username"),
+                                            ConfigurationReader.getProperty("marketing_password")});
 
     }
 
@@ -62,5 +70,36 @@ public class LoginPage extends BasePage{
             System.out.println("Invalid account type: " + accountType);
         }
     }
+//-----------------------------------login2--------------------------------------------------------------------
+    //second login method approach
+    public void login2(String userType){
+        String userName = "";
+        String password = "";
+
+        switch (userType.toLowerCase()) {
+            case "hr":
+                userName = ConfigurationReader.getProperty("hr_username");
+                password = ConfigurationReader.getProperty("hr_password");
+                break;
+            case "helpdesk":
+                userName = ConfigurationReader.getProperty("helpdesk_username");
+                password = ConfigurationReader.getProperty("helpdesk_password");
+                break;
+            case "marketing":
+                userName = ConfigurationReader.getProperty("marketing_username");
+                password = ConfigurationReader.getProperty("marketing_password");
+                break;
+            default:
+                System.out.println("Invalid user type");
+                break;
+        }
+        this.userName.sendKeys(userName);
+        this.password.sendKeys(password);
+        this.loginButton.click();
+    }
+//-----------------------------------------------------------------------------------------
+
+
+
 
 }

@@ -1,6 +1,5 @@
 package com.hakan.step_definitions;
 
-
 import com.hakan.pages.LoginPage;
 import com.hakan.pages.TaskPage;
 import com.hakan.utilities.BrowserUtils;
@@ -9,6 +8,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class Task_StepDefs {
 
@@ -20,15 +20,13 @@ public class Task_StepDefs {
     public void the_user_is_on_the_crm24_page() {
         Driver.getDriver().get("https://login1.nextbasecrm.com/stream/?login=yes");
 
+
     }
 
     @When("users log in with valid {string} credentials.")
     public void users_log_in_with_valid_credentials(String accountType) {
 
         loginPage.login(accountType);
-
-
-
     }
 
     @Then("the user should see the dashboard.")
@@ -59,6 +57,7 @@ public class Task_StepDefs {
 
         taskPage.taskBodyArea.click();
         taskPage.taskBodyArea.sendKeys("CRM Task body input");
+
         Driver.getDriver().switchTo().defaultContent();
 
     }

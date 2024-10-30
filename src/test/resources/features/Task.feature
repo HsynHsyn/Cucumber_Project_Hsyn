@@ -20,10 +20,8 @@ Feature: CRM Tasks feature
     Examples:
       | account   |
       | helpdesk  |
-      | HR        |
+      | hr        |
       | marketing |
-
-
 
   Scenario Outline: users can cancel a simple task.
     When users log in with valid "<account>" credentials.
@@ -34,7 +32,7 @@ Feature: CRM Tasks feature
     Examples:
       | account   |
       | helpdesk  |
-      | HR        |
+      | hr        |
       | marketing |
 
 

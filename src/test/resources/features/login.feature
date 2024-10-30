@@ -1,13 +1,22 @@
-@login
+
 Feature: Users should be able to login
 
-  Background: User is already in the log in page
+   Background: For all scenarios user is on CRM24 page of the CRM24 application
     Given the user is on the login page
 
-  @wip
-  Scenario: Verify login with different user types
-    Given the user logged in as "<userType>"
-    Given the user logged in with username as "User1" and password as "UserUser123"
+  Scenario Outline: Users log in with valid credentials for different accounts
+    When users log in with valid "<account>" credentials.
+    Then the user should see the dashboard.
+
+    Examples:
+      | account   |
+      | helpdesk  |
+      | HR        |
+      | marketing |
+
+
+
+
 
 
 
