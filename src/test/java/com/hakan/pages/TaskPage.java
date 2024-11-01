@@ -7,8 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class TaskPage extends BasePage {
 
-    @FindBy(xpath = "//span[@class ='logo-color']")
-    public WebElement logo24;
+
+
+    @FindBy(css = "a[title ='Time and Reports']")
+    public WebElement activeStream;
 
     @FindBy (xpath = "//span[text() ='Task']")
     public WebElement taskButton;

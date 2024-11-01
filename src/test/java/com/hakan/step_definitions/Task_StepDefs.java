@@ -32,7 +32,7 @@ public class Task_StepDefs {
     @Then("the user should see the dashboard.")
     public void the_user_should_see_the_dashboard() {
        //crmTaskPage.logo24.isDisplayed();
-       BrowserUtils.verifyElementDisplayed(taskPage.logo24); // this my utility
+       BrowserUtils.verifyElementDisplayed(taskPage.activeStream); // this my utility
     }
 
 

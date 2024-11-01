@@ -79,7 +79,9 @@ public class Poll_StepDefs {
 
         BrowserUtils.verifyElementDisplayed(pollPage.pollMessageAreaCollapsed);
 
+
     }
+
 
 
 }
