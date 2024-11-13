@@ -2,9 +2,11 @@ package com.hakan.pages;
 
 import com.hakan.utilities.ConfigurationReader;
 import com.hakan.utilities.Driver;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +30,6 @@ public class LoginPage extends BasePage{
 
     @FindBy(css = "input.login-btn")
     public WebElement bulletPoint;
-
 
 
     public void login(String userNameStr, String passwordStr) {
