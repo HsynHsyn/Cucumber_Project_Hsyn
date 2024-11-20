@@ -19,8 +19,6 @@ import java.util.List;
 
 public abstract class BasePage {
 
-
-
     @FindBy (css = "span[id='feed-add-post-form-tab-tasks'] > span")
     public WebElement taskButton;
 

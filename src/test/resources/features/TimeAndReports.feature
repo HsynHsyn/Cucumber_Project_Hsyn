@@ -15,9 +15,9 @@ Feature: CRM Time and Reports feature
   @Time
   Scenario Outline: The user should see 5 modules on the "Time and Reports" page
     When users log in with valid "<account>" credentials.
-   Then the user should see the dashboard.
+    Then the user should see the dashboard.
     When the user clicks on ``Time and Reports`` button
-   Then the user sees "<modules>" on the “Time and Reports” page.
+    Then the user sees "<modules>" on the “Time and Reports” page.
 
     Examples:
       | account   | modules                |
