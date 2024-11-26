@@ -29,6 +29,7 @@ public class ActiveStreamPage {
     public WebElement moreButton;
 
     @FindBy(xpath = "//div[@id='feed-add-post-form-tab']/span")
+    //css= "div.feed-add-post-form-variants>span" // same locator
     public List<WebElement> allTopButtons;
 
     @FindBy(xpath = "//div[@class = 'menu-popup-items']/span")

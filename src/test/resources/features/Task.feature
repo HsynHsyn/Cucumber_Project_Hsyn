@@ -10,7 +10,7 @@ Feature: CRM Tasks feature
   @Task
   Scenario Outline: Users log in with valid credentials for different accounts
     When users log in with valid "<account>" credentials.
-    Then the user should see the dashboard.
+    Then user should see the dashboard
     When users click on TASK button
     Then users enter the task title on Things to do area
     And users enter the task body on task body area

@@ -29,7 +29,7 @@ public class Task_StepDefs {
         loginPage.login(accountType);
     }
 
-    @Then("the user should see the dashboard.")
+    @Then("user should see the dashboard")
     public void the_user_should_see_the_dashboard() {
        //crmTaskPage.logo24.isDisplayed();
        BrowserUtils.verifyElementDisplayed(taskPage.activeStream); // this my utility

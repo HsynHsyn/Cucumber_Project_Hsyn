@@ -48,8 +48,8 @@ Feature: CRM Activity stream page.
     Examples:
       | account   |
       | helpdesk  |
-#      | hr        |
-#      | marketing |
+      | hr        |
+      | marketing |
 
 
 
