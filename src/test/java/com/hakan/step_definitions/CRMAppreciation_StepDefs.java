@@ -1,18 +1,14 @@
 package com.hakan.step_definitions;
 
-
 import com.hakan.pages.CRMAppreciationPage;
-import com.hakan.pages.LoginPage;
-import com.hakan.utilities.BrowserUtils;
 import com.hakan.utilities.Driver;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.Select;
 
-public class CRMApp_StepDefinitions {
+
+public class CRMAppreciation_StepDefs {
 
     CRMAppreciationPage crmAppreciationPage = new CRMAppreciationPage();
 
@@ -21,12 +17,25 @@ public class CRMApp_StepDefinitions {
 
         crmAppreciationPage.moreButton.click();
         crmAppreciationPage.appriciationButton.click();
+
+    }
+
+    @And("user entered the message content {string}")
+    public void userEnteredTheMessageContent(String messageContent) {
+
+        Driver.getDriver().switchTo().frame(crmAppreciationPage.iframe);
+
+        crmAppreciationPage.messageArea.click();
+        crmAppreciationPage.messageArea.sendKeys(messageContent);
+
+        Driver.getDriver().switchTo().defaultContent();
+
     }
 
     @When("user clicks the Send button")
     public void user_clicks_the_button() {
+      crmAppreciationPage.sendButton.click();
 
-        crmAppreciationPage.sendButton.click();
     }
 
     @Then("User should see the {string} on the page")
@@ -40,11 +49,17 @@ public class CRMApp_StepDefinitions {
         }
     }
 
+    @Then("User should see the {string} on Active Stream pages")
+    public void user_should_see_the_on_active_stream_pages(String messageContent) {
+
+        Assert.assertEquals(messageContent,crmAppreciationPage.lastMessage.getText());
+
+    }
+
+
     @Then("user clicks Add more button and clear")
     public void user_clicks_add_button() {
-
-        crmAppreciationPage.addMoreButton.click();
-        crmAppreciationPage.addMoreButton.clear();
+        crmAppreciationPage.allEmployeesButton.click();
 
     }
 
@@ -57,4 +72,6 @@ public class CRMApp_StepDefinitions {
     public void userShouldCancelSendingAppreciation() {
         crmAppreciationPage.cancelButton.click();
     }
+
+
 }

@@ -14,7 +14,22 @@ Feature: CRM appreciation messages functionality
     Given the user is on the CRM24 page.
 
   @App
-  Scenario Outline: Verify that user should be able to send an appreciation by filling the mandatory field.
+  Scenario Outline: : Sending an appreciation message successfully
+    When users log in with valid "<account>" credentials.
+    And user clicks on More button and Appriciation button
+    And user entered the message content "<messageContent>"
+    And user clicks the Send button
+    And User should see the "<messageContent>" on Active Stream pages
+
+
+    Examples:
+      | account   | messageContent                   |
+      | helpdesk  | *** Great job everyone ***       |
+      | hr        | *** Well done on the project *** |
+      | marketing | *** Keep up the good work ***    |
+
+  @App
+  Scenario Outline: Verify that user should be able to see missing message content warning.
     When users log in with valid "<account>" credentials.
     And user clicks on More button and Appriciation button
     And user clicks the Send button
@@ -27,7 +42,7 @@ Feature: CRM appreciation messages functionality
       | marketing | The message title is not specified |
 
   @App
-  Scenario Outline: Verify that user should be able to send an appreciation by filling the mandatory field.
+  Scenario Outline: Verify that user should be able to to see missing recipient message content warning.
     When users log in with valid "<account>" credentials.
     And user clicks on More button and Appriciation button
     And user clicks Add more button and clear
